@@ -417,6 +417,7 @@
                                 <div class="card-facitlities">
                                     <p class="card-miles text-md-medium">Động cơ 110cc</p>
                                     <p class="card-gear text-md-medium">Ổ khóa đa năng</p>
+                                    <p class="card-gear text-md-medium">Phanh đĩa</p>
                                 </div>
                                 <div class="endtime d-flex flex-column align-items-center gap-2">
 
