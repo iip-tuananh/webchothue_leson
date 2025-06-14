@@ -599,7 +599,7 @@
 
                                             </div>
                                         </div>
-                                        <div class="card-title"><a class="text-lg-bold neutral-1000" href="#">Máy in laser Brother HL-B2000d</a></div>
+                                        <div class="card-title"><a class="text-lg-bold neutral-1000" href="#">Máy in laser Brother</a></div>
                                         <div class="card-program">
                                             <div class="card-location">
                                                 <p class="text-location text-sm-medium neutral-500">Cẩm Lệ, Đà Nẵng</p>
@@ -1381,7 +1381,7 @@
                                         </a>
                                     </div>
                                     <div class="card-info">
-                                        <a class="card-title" href="#">Máy in laser Brother HL-B2000d</a>
+                                        <a class="card-title" href="#">Máy in laser Brother</a>
                                         <div class="card-meta">
                                             <div class="meta-links"><a href="#">24 Máy</a></div>
                                             <div class="card-button">
@@ -1403,7 +1403,7 @@
                                         </a>
                                     </div>
                                     <div class="card-info">
-                                        <a class="card-title" href="#">Máy in laser Brother HL-B2000d</a>
+                                        <a class="card-title" href="#">Máy in laser Brother</a>
                                         <div class="card-meta">
                                             <div class="meta-links"><a href="#">24 Máy</a></div>
                                             <div class="card-button">
@@ -1467,7 +1467,7 @@
                                         </a>
                                     </div>
                                     <div class="card-info">
-                                        <a class="card-title" href="#">Máy in laser Brother HL-B2000d</a>
+                                        <a class="card-title" href="#">Máy in laser Brother</a>
                                         <div class="card-meta">
                                             <div class="meta-links"><a href="#">24 Máy</a></div>
                                             <div class="card-button">
@@ -1489,7 +1489,7 @@
                                         </a>
                                     </div>
                                     <div class="card-info">
-                                        <a class="card-title" href="#">Máy in laser Brother HL-B2000d</a>
+                                        <a class="card-title" href="#">Máy in laser Brother</a>
                                         <div class="card-meta">
                                             <div class="meta-links"><a href="#">24 Máy</a></div>
                                             <div class="card-button">
