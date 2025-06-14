@@ -97,6 +97,7 @@
     </section>
 
 
+
     <style>
         /* Container cho phần giá */
         .card-price {
@@ -201,382 +202,432 @@
 
     </style>
 
-    <section class="section-box background-body py-96">
+
+    <style>
+        /* 1. Đặt .card-journey-small thành flex container để dễ căn chiều cao */
+        .card-journey-small {
+            display: flex;
+            flex-direction: column;
+            height: 100%;             /* sẽ cho phép flex con mở rộng đầy slide */
+        }
+
+        .equal-height-cards .card-image {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+        }
+        /* 3. Ép ảnh full vùng, giữ tỉ lệ, crop nếu cần */
+        .equal-height-cards .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* 4. Phần info auto giãn để lấp đầy khoảng trống */
+        .card-info {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 5. (Tùy chọn) căn phần rating + title lên trên, phần price/button luôn bottom */
+        .card-info > .card-rating,
+        .card-info > .card-title,
+        .card-info > .card-program {
+            /* bạn có thể set margin-bottom: auto; với các phần trên để push phần cuối xuống dưới */
+        }
+
+    </style>
+
+    <section class="section-box box-flights background-body" style="padding-bottom: 51px !important;">
         <div class="container">
             <div class="row align-items-end">
-                <div class="col-lg-6 mb-30 text-center text-lg-start">
-                    <h2 class="neutral-1000">Sản phẩm nổi bật</h2>
-                    <p class="text-xl-medium neutral-500">Những sản phẩm được thuê trên sàn nhiều nhất</p>
+                <div class="col-md-9 wow fadeInUp">
+                    <h3 class="title-svg neutral-1000 mb-5">Sản phẩm nổi bật</h3>
+                    <p class="text-lg-medium text-bold neutral-500">Những sản phẩm được thuê trên sàn nhiều nhất</p>
+                </div>
+                <div class="col-md-3 position-relative mb-30 wow fadeInUp">
+                    <div class="box-button-slider box-button-slider-team justify-content-end">
+                        <div class="swiper-button-prev swiper-button-prev-style-1 swiper-button-prev-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                                <path d="M7.99992 3.33325L3.33325 7.99992M3.33325 7.99992L7.99992 12.6666M3.33325 7.99992H12.6666" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                        <div class="swiper-button-next swiper-button-next-style-1 swiper-button-next-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                                <path d="M7.99992 12.6666L12.6666 7.99992L7.99992 3.33325M12.6666 7.99992L3.33325 7.99992" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row equal-height-cards">
-                <div class="col-lg-3 col-md-6">
-                    <div class="card-journey-small background-card wow fadeInUp hover-up">
-                        <div class="card-image">
-                            <a href="#">
-                                <img src="/site/imgs/noibat/nb1.jpg" alt="Carento" />
-                            </a>
-                        </div>
-                        <div class="card-info p-4 pt-30">
-                            <div class="card-rating">
-                                <div class="card-left"></div>
-                                <div class="card-right">
-                                    <span class="rating text-xs-medium rounded-pill">4.96 <span class="text-xs-medium neutral-500">(672 reviews)</span></span>
-                                </div>
-                            </div>
-                            <div class="card-title"><a class="text-lg-bold neutral-1000" href="#">MacBook Air 2020 13 inch</a></div>
-                            <div class="card-program">
-                                <div class="card-location">
-                                    <p class="text-location text-sm-medium neutral-500">Thanh Xuân, Hà Nội</p>
-                                </div>
-                                <div class="card-facitlities">
-                                    <p class="card-miles text-md-medium">16GB RAM</p>
-                                    <p class="card-gear text-md-medium">256GB SSD</p>
-                                    <p class="card-fuel text-md-medium">APPLE A11</p>
-                                </div>
-                                <div class="endtime d-flex flex-column align-items-center gap-2">
+            <div class="block-flights wow fadeInUp">
+                <div class="box-swiper mt-30">
+                    <div class="swiper-container swiper-group-4 swiper-group-journey">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="card-journey-small equal-height-cards background-card wow fadeInUp hover-up">
+                                    <div class="card-image">
+                                        <a href="#">
+                                            <img src="/site/imgs/noibat/nb1.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info p-4">
+                                        <div class="card-rating">
+                                            <div class="card-left"></div>
+                                            <div class="card-right">
 
-                                    <div class="card-price d-flex align-items-center gap-4">
-                                        <!-- Giá cho thuê -->
-                                        <div class="price-item price-rent text-center">
-                                            <span class="price-label text-xs-medium neutral-500">Cho thuê chỉ từ</span>
-                                            <h6 class="price-amount text-lg-bold neutral-1000">299,000đ<span class="price-unit text-sm-regular neutral-500">/ngày</span></h6>
+                                            </div>
                                         </div>
-                                        <!-- Giá mua -->
-                                        <div class="price-item price-buy text-center">
-                                            <span class="price-label text-xs-medium neutral-500">Mua ngay từ</span>
-                                            <h6 class="price-amount text-lg-bold neutral-1000">3,900,000đ<span class="price-unit text-sm-regular neutral-500"></span></h6>
-                                        </div>
-                                    </div>
-                                    <div class="card-button">
-                                        <a class="btn btn-gray" href="#">Chi tiết</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card-journey-small background-card wow fadeInUp hover-up">
-                        <div class="card-image">
-                            <a href="#">
-                                <img src="/site/imgs/noibat/nb2.jpg" alt="Carento" />
-                            </a>
-                        </div>
-                        <div class="card-info p-4 pt-30">
-                            <div class="card-rating">
-                                <div class="card-left"></div>
-                                <div class="card-right">
-                                    <span class="rating text-xs-medium rounded-pill">4.96 <span class="text-xs-medium neutral-500">(672 reviews)</span></span>
-                                </div>
-                            </div>
-                            <div class="card-title"><a class="text-lg-bold neutral-1000" href="#">Dell XPS 9320</a></div>
-                            <div class="card-program">
-                                <div class="card-location">
-                                    <p class="text-location text-sm-medium neutral-500">Thanh Xuân, Hà Nội</p>
-                                </div>
-                                <div class="card-facitlities">
-                                    <p class="card-miles text-md-medium">16GB RAM</p>
-                                    <p class="card-gear text-md-medium">512GB SSD</p>
-                                    <p class="card-fuel text-md-medium">CORE I7 1260P</p>
-                                    <p class="card-seat text-md-medium"></p>
-                                </div>
-                                <div class="endtime d-flex flex-column align-items-center gap-2">
+                                        <div class="card-title"><a class="text-lg-bold neutral-1000" href="#">MacBook Air 2020 13 inch</a></div>
+                                        <div class="card-program">
+                                            <div class="card-location">
+                                                <p class="text-location text-sm-medium neutral-500">Thanh Xuân, Hà Nội</p>
+                                            </div>
+                                            <div class="card-facitlities">
+                                                <p class="card-miles text-md-medium">16GB RAM</p>
+                                                <p class="card-gear text-md-medium">256GB SSD</p>
+                                                <p class="card-fuel text-md-medium">APPLE A11</p>
+                                            </div>
+                                            <div class="endtime d-flex flex-column align-items-center gap-2">
 
-                                    <div class="card-price d-flex align-items-center gap-4">
-                                        <!-- Giá cho thuê -->
-                                        <div class="price-item price-rent text-center">
-                                            <span class="price-label text-xs-medium neutral-500">Cho thuê chỉ từ</span>
-                                            <h6 class="price-amount text-lg-bold neutral-1000">299,000đ<span class="price-unit text-sm-regular neutral-500">/ngày</span></h6>
-                                        </div>
-                                        <!-- Giá mua -->
-                                        <div class="price-item price-buy text-center">
-                                            <span class="price-label text-xs-medium neutral-500">Mua ngay từ</span>
-                                            <h6 class="price-amount text-lg-bold neutral-1000">3,900,000đ<span class="price-unit text-sm-regular neutral-500"></span></h6>
+                                                <div class="card-price d-flex align-items-center">
+                                                    <!-- Giá cho thuê -->
+                                                    <div class="price-item price-rent text-center">
+                                                        <span class="price-label text-xs-medium neutral-500">Cho thuê chỉ từ</span>
+                                                        <h6 class="price-amount text-lg-bold">299,000đ<span class="price-unit text-sm-regular neutral-500">/ngày</span></h6>
+                                                    </div>
+                                                    <!-- Giá mua -->
+                                                    <div class="price-item price-buy text-center">
+                                                        <span class="price-label text-xs-medium neutral-500">Sở hữu ngay từ</span>
+                                                        <h6 class="price-amount text-lg-bold">3,900,000đ<span class="price-unit text-sm-regular neutral-500"></span></h6>
+                                                    </div>
+                                                </div>
+                                                <div class="card-button">
+                                                    <a class="btn btn-gray" href="#">Chi tiết</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="card-button">
-                                        <a class="btn btn-gray" href="#">Chi tiết</a>
+                                </div>
+                                <div class="card-journey-small equal-height-cards background-card wow fadeInUp hover-up">
+                                    <div class="card-image">
+                                        <a href="#">
+                                            <img src="/site/imgs/noibat/nb2.jpg" alt="Carento" />
+                                        </a>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card-journey-small background-card wow fadeInUp hover-up">
-                        <div class="card-image">
-                            <a href="#">
-                                <img src="/site/imgs/noibat/nb3.jpg" alt="Carento" />
-                            </a>
-                        </div>
-                        <div class="card-info p-4 pt-30">
-                            <div class="card-rating">
-                                <div class="card-left"></div>
-                                <div class="card-right">
-                                    <span class="rating text-xs-medium rounded-pill">4.96 <span class="text-xs-medium neutral-500">(672 reviews)</span></span>
-                                </div>
-                            </div>
-                            <div class="card-title"><a class="text-lg-bold neutral-1000" href="#">Máy in canon lbp 6030</a></div>
-                            <div class="card-program">
-                                <div class="card-location">
-                                    <p class="text-location text-sm-medium neutral-500">Cẩm Lệ, Đà Nẵng</p>
-                                </div>
-                                <div class="card-facitlities">
-                                    <p class="card-miles text-md-medium">48 trang/phút</p>
-                                    <p class="card-gear text-md-medium">Bộ nhớ 32Mb</p>
-                                    <p class="card-seat text-md-medium">600 x 600dpi</p>
-                                </div>
-                                <div class="endtime d-flex flex-column align-items-center gap-2">
+                                    <div class="card-info p-4 ">
+                                        <div class="card-rating">
+                                            <div class="card-left"></div>
+                                            <div class="card-right">
 
-                                    <div class="card-price d-flex align-items-center gap-4">
-                                        <!-- Giá cho thuê -->
-                                        <div class="price-item price-rent text-center">
-                                            <span class="price-label text-xs-medium neutral-500">Cho thuê chỉ từ</span>
-                                            <h6 class="price-amount text-lg-bold neutral-1000">299,000đ<span class="price-unit text-sm-regular neutral-500">/ngày</span></h6>
+                                            </div>
                                         </div>
-                                        <!-- Giá mua -->
-                                        <div class="price-item price-buy text-center">
-                                            <span class="price-label text-xs-medium neutral-500">Mua ngay từ</span>
-                                            <h6 class="price-amount text-lg-bold neutral-1000">3,900,000đ<span class="price-unit text-sm-regular neutral-500"></span></h6>
-                                        </div>
-                                    </div>
-                                    <div class="card-button">
-                                        <a class="btn btn-gray" href="#">Chi tiết</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card-journey-small background-card wow fadeInUp hover-up">
-                        <div class="card-image">
-                            <a href="#">
-                                <img src="/site/imgs/noibat/nb4.jpg" alt="Carento" />
-                            </a>
-                        </div>
-                        <div class="card-info p-4 pt-30">
-                            <div class="card-rating">
-                                <div class="card-left"></div>
-                                <div class="card-right">
-                                    <span class="rating text-xs-medium rounded-pill">4.96 <span class="text-xs-medium neutral-500">(672 reviews)</span></span>
-                                </div>
-                            </div>
-                            <div class="card-title"><a class="text-lg-bold neutral-1000" href="#">Máy in laser Brother HL-B2000d</a></div>
-                            <div class="card-program">
-                                <div class="card-location">
-                                    <p class="text-location text-sm-medium neutral-500">Cẩm Lệ, Đà Nẵng</p>
-                                </div>
-                                <div class="card-facitlities">
-                                    <p class="card-miles text-md-medium">36 trang/phút</p>
-                                    <p class="card-gear text-md-medium">USB 2.0</p>
-                                    <p class="card-fuel text-md-medium">Toner TN-B022</p>
-                                </div>
-                                <div class="endtime d-flex flex-column align-items-center gap-2">
+                                        <div class="card-title"><a class="text-lg-bold neutral-1000" href="#">Dell XPS 9320</a></div>
+                                        <div class="card-program">
+                                            <div class="card-location">
+                                                <p class="text-location text-sm-medium neutral-500">Thanh Xuân, Hà Nội</p>
+                                            </div>
+                                            <div class="card-facitlities">
+                                                <p class="card-miles text-md-medium">16GB RAM</p>
+                                                <p class="card-gear text-md-medium">512GB SSD</p>
+                                                <p class="card-fuel text-md-medium">CORE I7</p>
+                                                <p class="card-seat text-md-medium"></p>
+                                            </div>
+                                            <div class="endtime d-flex flex-column align-items-center gap-2">
 
-                                    <div class="card-price d-flex align-items-center gap-4">
-                                        <!-- Giá cho thuê -->
-                                        <div class="price-item price-rent text-center">
-                                            <span class="price-label text-xs-medium neutral-500">Cho thuê chỉ từ</span>
-                                            <h6 class="price-amount text-lg-bold neutral-1000">299,000đ<span class="price-unit text-sm-regular neutral-500">/ngày</span></h6>
+                                                <div class="card-price d-flex align-items-center">
+                                                    <!-- Giá cho thuê -->
+                                                    <div class="price-item price-rent text-center">
+                                                        <span class="price-label text-xs-medium neutral-500">Cho thuê chỉ từ</span>
+                                                        <h6 class="price-amount text-lg-bold">299,000đ<span class="price-unit text-sm-regular neutral-500">/ngày</span></h6>
+                                                    </div>
+                                                    <!-- Giá mua -->
+                                                    <div class="price-item price-buy text-center">
+                                                        <span class="price-label text-xs-medium neutral-500">Sở hữu ngay từ</span>
+                                                        <h6 class="price-amount text-lg-bold">3,900,000đ<span class="price-unit text-sm-regular neutral-500"></span></h6>
+                                                    </div>
+                                                </div>
+                                                <div class="card-button">
+                                                    <a class="btn btn-gray" href="#">Chi tiết</a>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <!-- Giá mua -->
-                                        <div class="price-item price-buy text-center">
-                                            <span class="price-label text-xs-medium neutral-500">Mua ngay từ</span>
-                                            <h6 class="price-amount text-lg-bold neutral-1000">3,900,000đ<span class="price-unit text-sm-regular neutral-500"></span></h6>
-                                        </div>
-                                    </div>
-                                    <div class="card-button">
-                                        <a class="btn btn-gray" href="#">Chi tiết</a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card-journey-small background-card wow fadeInUp hover-up">
-                        <div class="card-image">
-                            <a href="#">
-                                <img src="/site/imgs/noibat/nb5.jpg" alt="Carento" />
-                            </a>
-                        </div>
-                        <div class="card-info p-4 pt-30">
-                            <div class="card-rating">
-                                <div class="card-left"></div>
-                                <div class="card-right">
-                                    <span class="rating text-xs-medium rounded-pill">4.96 <span class="text-xs-medium neutral-500">(672 reviews)</span></span>
-                                </div>
-                            </div>
-                            <div class="card-title"><a class="text-lg-bold neutral-1000" href="#">Honda Wave Alpha 110cc 2024</a></div>
-                            <div class="card-program">
-                                <div class="card-location">
-                                    <p class="text-location text-sm-medium neutral-500">Quận 1, TP. Hồ Chí Minh</p>
-                                </div>
-                                <div class="card-facitlities">
-                                    <p class="card-miles text-md-medium">Động cơ 110cc</p>
-                                    <p class="card-gear text-md-medium">Ổ khóa đa năng</p>
-                                    <p class="card-gear text-md-medium">Phanh đĩa</p>
-                                </div>
-                                <div class="endtime d-flex flex-column align-items-center gap-2">
+                            <div class="swiper-slide">
+                                <div class="card-journey-small equal-height-cards background-card wow fadeInUp hover-up">
+                                    <div class="card-image">
+                                        <a href="#">
+                                            <img src="/site/imgs/noibat/nb3.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info p-4 ">
+                                        <div class="card-rating">
+                                            <div class="card-left"></div>
+                                            <div class="card-right">
 
-                                    <div class="card-price d-flex align-items-center gap-4">
-                                        <!-- Giá cho thuê -->
-                                        <div class="price-item price-rent text-center">
-                                            <span class="price-label text-xs-medium neutral-500">Cho thuê chỉ từ</span>
-                                            <h6 class="price-amount text-lg-bold neutral-1000">299,000đ<span class="price-unit text-sm-regular neutral-500">/ngày</span></h6>
+                                            </div>
                                         </div>
-                                        <!-- Giá mua -->
-                                        <div class="price-item price-buy text-center">
-                                            <span class="price-label text-xs-medium neutral-500">Mua ngay từ</span>
-                                            <h6 class="price-amount text-lg-bold neutral-1000">3,900,000đ<span class="price-unit text-sm-regular neutral-500"></span></h6>
+                                        <div class="card-title"><a class="text-lg-bold neutral-1000" href="#">Máy in canon lbp 6030</a></div>
+                                        <div class="card-program">
+                                            <div class="card-location">
+                                                <p class="text-location text-sm-medium neutral-500">Cẩm Lệ, Đà Nẵng</p>
+                                            </div>
+                                            <div class="card-facitlities">
+                                                <p class="card-miles text-md-medium">48 trang/phút</p>
+                                                <p class="card-gear text-md-medium">Bộ nhớ 32Mb</p>
+                                                <p class="card-seat text-md-medium">600 x 600dpi</p>
+                                            </div>
+                                            <div class="endtime d-flex flex-column align-items-center gap-2">
+
+                                                <div class="card-price d-flex align-items-center">
+                                                    <!-- Giá cho thuê -->
+                                                    <div class="price-item price-rent text-center">
+                                                        <span class="price-label text-xs-medium neutral-500">Cho thuê chỉ từ</span>
+                                                        <h6 class="price-amount text-lg-bold">299,000đ<span class="price-unit text-sm-regular neutral-500">/ngày</span></h6>
+                                                    </div>
+                                                    <!-- Giá mua -->
+                                                    <div class="price-item price-buy text-center">
+                                                        <span class="price-label text-xs-medium neutral-500">Sở hữu ngay từ</span>
+                                                        <h6 class="price-amount text-lg-bold">3,900,000đ<span class="price-unit text-sm-regular neutral-500"></span></h6>
+                                                    </div>
+                                                </div>
+                                                <div class="card-button">
+                                                    <a class="btn btn-gray" href="#">Chi tiết</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="card-button">
-                                        <a class="btn btn-gray" href="#">Chi tiết</a>
+                                </div>
+                                <div class="card-journey-small equal-height-cards background-card wow fadeInUp hover-up">
+                                    <div class="card-image">
+                                        <a href="#">
+                                            <img src="/site/imgs/noibat/nb5.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info p-4 ">
+                                        <div class="card-rating">
+                                            <div class="card-left"></div>
+                                            <div class="card-right">
+
+                                            </div>
+                                        </div>
+                                        <div class="card-title"><a class="text-lg-bold neutral-1000" href="#">Honda Wave Alpha 110cc 2024</a></div>
+                                        <div class="card-program">
+                                            <div class="card-location">
+                                                <p class="text-location text-sm-medium neutral-500">Quận 1, TP. Hồ Chí Minh</p>
+                                            </div>
+                                            <div class="card-facitlities">
+                                                <p class="card-miles text-md-medium">110cc</p>
+                                                <p class="card-gear text-md-medium">Ổ khóa</p>
+                                                <p class="card-gear text-md-medium">Phanh đĩa</p>
+                                            </div>
+                                            <div class="endtime d-flex flex-column align-items-center gap-2">
+
+                                                <div class="card-price d-flex align-items-center">
+                                                    <!-- Giá cho thuê -->
+                                                    <div class="price-item price-rent text-center">
+                                                        <span class="price-label text-xs-medium neutral-500">Cho thuê chỉ từ</span>
+                                                        <h6 class="price-amount text-lg-bold">299,000đ<span class="price-unit text-sm-regular neutral-500">/ngày</span></h6>
+                                                    </div>
+                                                    <!-- Giá mua -->
+                                                    <div class="price-item price-buy text-center">
+                                                        <span class="price-label text-xs-medium neutral-500">Sở hữu ngay từ</span>
+                                                        <h6 class="price-amount text-lg-bold">3,900,000đ<span class="price-unit text-sm-regular neutral-500"></span></h6>
+                                                    </div>
+                                                </div>
+                                                <div class="card-button">
+                                                    <a class="btn btn-gray" href="#">Chi tiết</a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card-journey-small background-card wow fadeInUp hover-up">
-                        <div class="card-image">
-                            <a href="#">
-                                <img src="/site/imgs/noibat/nb6.jpg" alt="Carento" />
+                            <div class="swiper-slide">
+                                <div class="card-journey-small equal-height-cards background-card wow fadeInUp hover-up">
+                                    <div class="card-image">
+                                        <a href="#">
+                                            <img src="/site/imgs/noibat/nb6.jpg" alt="Carento" />
 
-                            </a>
-                        </div>
-                        <div class="card-info p-4 pt-30">
-                            <div class="card-rating">
-                                <div class="card-left"></div>
-                                <div class="card-right">
-                                    <span class="rating text-xs-medium rounded-pill">4.96 <span class="text-xs-medium neutral-500">(672 reviews)</span></span>
-                                </div>
-                            </div>
-                            <div class="card-title"><a class="text-lg-bold neutral-1000" href="#">Honda Air Blade 160</a></div>
-                            <div class="card-program">
-                                <div class="card-location">
-                                    <p class="text-location text-sm-medium neutral-500">Quận 1, TP. Hồ Chí Minh</p>
-                                </div>
-                                <div class="card-facitlities">
-                                    <p class="card-miles text-md-medium">Đen/Xám</p>
-                                    <p class="card-gear text-md-medium">Xăng, 4 kỳ</p>
-                                    <p class="card-fuel text-md-medium">Phanh đĩa</p>
-                                </div>
-                                <div class="endtime d-flex flex-column align-items-center gap-2">
+                                        </a>
+                                    </div>
+                                    <div class="card-info p-4">
+                                        <div class="card-rating">
+                                            <div class="card-left"></div>
+                                            <div class="card-right">
 
-                                    <div class="card-price d-flex align-items-center gap-4">
-                                        <!-- Giá cho thuê -->
-                                        <div class="price-item price-rent text-center">
-                                            <span class="price-label text-xs-medium neutral-500">Cho thuê chỉ từ</span>
-                                            <h6 class="price-amount text-lg-bold neutral-1000">299,000đ<span class="price-unit text-sm-regular neutral-500">/ngày</span></h6>
+                                            </div>
                                         </div>
-                                        <!-- Giá mua -->
-                                        <div class="price-item price-buy text-center">
-                                            <span class="price-label text-xs-medium neutral-500">Mua ngay từ</span>
-                                            <h6 class="price-amount text-lg-bold neutral-1000">3,900,000đ<span class="price-unit text-sm-regular neutral-500"></span></h6>
+                                        <div class="card-title"><a class="text-lg-bold neutral-1000" href="#">Honda Air Blade 160</a></div>
+                                        <div class="card-program">
+                                            <div class="card-location">
+                                                <p class="text-location text-sm-medium neutral-500">Quận 1, TP. Hồ Chí Minh</p>
+                                            </div>
+                                            <div class="card-facitlities">
+                                                <p class="card-miles text-md-medium">Đen/Xám</p>
+                                                <p class="card-gear text-md-medium">Xăng, 4 kỳ</p>
+                                                <p class="card-fuel text-md-medium">Phanh đĩa</p>
+                                            </div>
+                                            <div class="endtime d-flex flex-column align-items-center gap-2">
+
+                                                <div class="card-price d-flex align-items-center">
+                                                    <!-- Giá cho thuê -->
+                                                    <div class="price-item price-rent text-center">
+                                                        <span class="price-label text-xs-medium neutral-500">Cho thuê chỉ từ</span>
+                                                        <h6 class="price-amount text-lg-bold">299,000đ<span class="price-unit text-sm-regular neutral-500">/ngày</span></h6>
+                                                    </div>
+                                                    <!-- Giá mua -->
+                                                    <div class="price-item price-buy text-center">
+                                                        <span class="price-label text-xs-medium neutral-500">Sở hữu ngay từ</span>
+                                                        <h6 class="price-amount text-lg-bold">3,900,000đ<span class="price-unit text-sm-regular neutral-500"></span></h6>
+                                                    </div>
+                                                </div>
+                                                <div class="card-button">
+                                                    <a class="btn btn-gray" href="#">Chi tiết</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="card-button">
-                                        <a class="btn btn-gray" href="#">Chi tiết</a>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card-journey-small background-card wow fadeInUp hover-up">
-                        <div class="card-image">
-                            <a href="#">
-                                <img src="/site/imgs/noibat/nb7.jpg" alt="Carento" />
+                                <div class="card-journey-small equal-height-cards background-card wow fadeInUp hover-up">
+                                    <div class="card-image">
+                                        <a href="#">
+                                            <img src="/site/imgs/noibat/nb7.jpg" alt="Carento" />
 
-                            </a>
-                        </div>
-                        <div class="card-info p-4 pt-30">
-                            <div class="card-rating">
-                                <div class="card-left"></div>
-                                <div class="card-right">
-                                    <span class="rating text-xs-medium rounded-pill">4.96 <span class="text-xs-medium neutral-500">(672 reviews)</span></span>
-                                </div>
-                            </div>
-                            <div class="card-title"><a class="text-lg-bold neutral-1000" href="#">Kia New Seltos</a></div>
-                            <div class="card-program">
-                                <div class="card-location">
-                                    <p class="text-location text-sm-medium neutral-500">Gò Vấp, TP. Hồ Chí Minh</p>
-                                </div>
-                                <div class="card-facitlities">
-                                    <p class="card-miles text-md-medium">Kappa 1.4</p>
-                                    <p class="card-gear text-md-medium">Ly hợp kép</p>
-                                    <p class="card-fuel text-md-medium">Xăng</p>
-                                </div>
-                                <div class="endtime d-flex flex-column align-items-center gap-2">
-
-                                    <div class="card-price d-flex align-items-center gap-4">
-                                        <!-- Giá cho thuê -->
-                                        <div class="price-item price-rent text-center">
-                                            <span class="price-label text-xs-medium neutral-500">Cho thuê chỉ từ</span>
-                                            <h6 class="price-amount text-lg-bold neutral-1000">299,000đ<span class="price-unit text-sm-regular neutral-500">/ngày</span></h6>
-                                        </div>
-                                        <!-- Giá mua -->
-                                        <div class="price-item price-buy text-center">
-                                            <span class="price-label text-xs-medium neutral-500">Mua ngay từ</span>
-                                            <h6 class="price-amount text-lg-bold neutral-1000">3,900,000đ<span class="price-unit text-sm-regular neutral-500"></span></h6>
-                                        </div>
+                                        </a>
                                     </div>
-                                    <div class="card-button">
-                                        <a class="btn btn-gray" href="#">Chi tiết</a>
+                                    <div class="card-info p-4">
+                                        <div class="card-rating">
+                                            <div class="card-left"></div>
+                                            <div class="card-right">
+
+                                            </div>
+                                        </div>
+                                        <div class="card-title"><a class="text-lg-bold neutral-1000" href="#">Kia New Seltos</a></div>
+                                        <div class="card-program">
+                                            <div class="card-location">
+                                                <p class="text-location text-sm-medium neutral-500">Gò Vấp, TP. Hồ Chí Minh</p>
+                                            </div>
+                                            <div class="card-facitlities">
+                                                <p class="card-miles text-md-medium">Kappa 1.4</p>
+                                                <p class="card-gear text-md-medium">Ly hợp kép</p>
+                                                <p class="card-fuel text-md-medium">Xăng</p>
+                                            </div>
+                                            <div class="endtime d-flex flex-column align-items-center gap-2">
+
+                                                <div class="card-price d-flex align-items-center">
+                                                    <!-- Giá cho thuê -->
+                                                    <div class="price-item price-rent text-center">
+                                                        <span class="price-label text-xs-medium neutral-500">Cho thuê chỉ từ</span>
+                                                        <h6 class="price-amount text-lg-bold">299,000đ<span class="price-unit text-sm-regular neutral-500">/ngày</span></h6>
+                                                    </div>
+                                                    <!-- Giá mua -->
+                                                    <div class="price-item price-buy text-center">
+                                                        <span class="price-label text-xs-medium neutral-500">Sở hữu ngay từ</span>
+                                                        <h6 class="price-amount text-lg-bold">3,900,000đ<span class="price-unit text-sm-regular neutral-500"></span></h6>
+                                                    </div>
+                                                </div>
+                                                <div class="card-button">
+                                                    <a class="btn btn-gray" href="#">Chi tiết</a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card-journey-small background-card wow fadeInUp hover-up">
-                        <div class="card-image">
-                            <a href="#">
-                                <img src="/site/imgs/noibat/nb8.jpg" alt="Carento" />
+                            <div class="swiper-slide">
+                                <div class="card-journey-small equal-height-cards background-card wow fadeInUp hover-up">
+                                    <div class="card-image">
+                                        <a href="#">
+                                            <img src="/site/imgs/noibat/nb8.jpg" alt="Carento" />
 
-                            </a>
-                        </div>
-                        <div class="card-info p-4 pt-30">
-                            <div class="card-rating">
-                                <div class="card-left"></div>
-                                <div class="card-right">
-                                    <span class="rating text-xs-medium rounded-pill">4.96 <span class="text-xs-medium neutral-500">(672 reviews)</span></span>
-                                </div>
-                            </div>
-                            <div class="card-title"><a class="text-lg-bold neutral-1000" href="#">Toyota Yaris 2021</a></div>
-                            <div class="card-program">
-                                <div class="card-location">
-                                    <p class="text-location text-sm-medium neutral-500">Hà Đông, Hà Nội</p>
-                                </div>
-                                <div class="card-facitlities">
-                                    <p class="card-miles text-md-medium">2NR-FE</p>
-                                    <p class="card-gear text-md-medium">1.496</p>
-                                    <p class="card-fuel text-md-medium">CVT</p>
-                                    <p class="card-seat text-md-medium">Xăng</p>
-                                </div>
-                                <div class="endtime d-flex flex-column align-items-center gap-2">
+                                        </a>
+                                    </div>
+                                    <div class="card-info p-4">
+                                        <div class="card-rating">
+                                            <div class="card-left"></div>
+                                            <div class="card-right">
 
-                                    <div class="card-price d-flex align-items-center gap-4">
-                                        <!-- Giá cho thuê -->
-                                        <div class="price-item price-rent text-center">
-                                            <span class="price-label text-xs-medium neutral-500">Cho thuê chỉ từ</span>
-                                            <h6 class="price-amount text-lg-bold neutral-1000">299,000đ<span class="price-unit text-sm-regular neutral-500">/ngày</span></h6>
+                                            </div>
                                         </div>
-                                        <!-- Giá mua -->
-                                        <div class="price-item price-buy text-center">
-                                            <span class="price-label text-xs-medium neutral-500">Mua ngay từ</span>
-                                            <h6 class="price-amount text-lg-bold neutral-1000">3,900,000đ<span class="price-unit text-sm-regular neutral-500"></span></h6>
+                                        <div class="card-title"><a class="text-lg-bold neutral-1000" href="#">Toyota Yaris 2021</a></div>
+                                        <div class="card-program">
+                                            <div class="card-location">
+                                                <p class="text-location text-sm-medium neutral-500">Hà Đông, Hà Nội</p>
+                                            </div>
+                                            <div class="card-facitlities">
+                                                <p class="card-miles text-md-medium">2NR-FE</p>
+                                                <p class="card-gear text-md-medium">1.496</p>
+                                                <p class="card-fuel text-md-medium">CVT</p>
+                                                <p class="card-seat text-md-medium">Xăng</p>
+                                            </div>
+                                            <div class="endtime d-flex flex-column align-items-center gap-2">
+
+                                                <div class="card-price d-flex align-items-center">
+                                                    <!-- Giá cho thuê -->
+                                                    <div class="price-item price-rent text-center">
+                                                        <span class="price-label text-xs-medium neutral-500">Cho thuê chỉ từ</span>
+                                                        <h6 class="price-amount text-lg-bold">299,000đ<span class="price-unit text-sm-regular neutral-500">/ngày</span></h6>
+                                                    </div>
+                                                    <!-- Giá mua -->
+                                                    <div class="price-item price-buy text-center">
+                                                        <span class="price-label text-xs-medium neutral-500">Sở hữu ngay từ</span>
+                                                        <h6 class="price-amount text-lg-bold">3,900,000đ<span class="price-unit text-sm-regular neutral-500"></span></h6>
+                                                    </div>
+                                                </div>
+                                                <div class="card-button">
+                                                    <a class="btn btn-gray" href="#">Chi tiết</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="card-button">
-                                        <a class="btn btn-gray" href="#">Chi tiết</a>
+                                </div>
+                                <div class="card-journey-small equal-height-cards background-card wow fadeInUp hover-up">
+                                    <div class="card-image">
+                                        <a href="#">
+                                            <img src="/site/imgs/noibat/nb4.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info p-4">
+                                        <div class="card-rating">
+                                            <div class="card-left"></div>
+                                            <div class="card-right">
+
+                                            </div>
+                                        </div>
+                                        <div class="card-title"><a class="text-lg-bold neutral-1000" href="#">Máy in laser Brother HL-B2000d</a></div>
+                                        <div class="card-program">
+                                            <div class="card-location">
+                                                <p class="text-location text-sm-medium neutral-500">Cẩm Lệ, Đà Nẵng</p>
+                                            </div>
+                                            <div class="card-facitlities">
+                                                <p class="card-miles text-md-medium">36 trang/phút</p>
+                                                <p class="card-gear text-md-medium">USB 2.0</p>
+                                                <p class="card-fuel text-md-medium">Toner TN</p>
+                                            </div>
+                                            <div class="endtime d-flex flex-column align-items-center gap-2">
+
+                                                <div class="card-price d-flex align-items-center">
+                                                    <!-- Giá cho thuê -->
+                                                    <div class="price-item price-rent text-center">
+                                                        <span class="price-label text-xs-medium neutral-500">Cho thuê chỉ từ</span>
+                                                        <h6 class="price-amount text-lg-bold">299,000đ<span class="price-unit text-sm-regular neutral-500">/ngày</span></h6>
+                                                    </div>
+                                                    <!-- Giá mua -->
+                                                    <div class="price-item price-buy text-center">
+                                                        <span class="price-label text-xs-medium neutral-500">Sở hữu ngay từ</span>
+                                                        <h6 class="price-amount text-lg-bold">3,900,000đ<span class="price-unit text-sm-regular neutral-500"></span></h6>
+                                                    </div>
+                                                </div>
+                                                <div class="card-button">
+                                                    <a class="btn btn-gray" href="#">Chi tiết</a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -585,7 +636,7 @@
                 </div>
             </div>
             <div class="d-flex justify-content-center">
-                <a class="btn btn-brand-2 text-nowrap wow fadeInUp" href="#">
+                <a class="btn btn-brand-2 text-nowrap wow fadeInUp" href="cars-list-1.html">
                     <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
                         <g clip-path="url(#clip0_117_4717)">
                             <path d="M4.4024 14.0977C1.60418 11.2899 1.60418 6.71576 4.4024 3.90794L5.89511 5.40064V0.90332H1.39779L3.13528 2.64081C-0.378102 6.1494 -0.378102 11.8562 3.13528 15.3696C5.35275 17.5823 8.43896 18.403 11.2996 17.8175V15.9648C8.91413 16.584 6.26949 15.9648 4.4024 14.0977Z" fill="#101010" />
@@ -604,8 +655,7 @@
     </section>
 
 
-
-    <section class="box-cta-1 background-100 py-96">
+    <section class="box-cta-1 background-100 py-96" style="padding-bottom: 30px !important;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 pe-lg-5 wow fadeInUp">
@@ -639,1035 +689,1075 @@
         </div>
     </section>
 
-
-    <!-- categories 1 -->
-    <section class="section-box background-body pt-96">
+    <section class="section-box box-flights background-body">
         <div class="container">
-            <div class="row align-items-end mb-40">
-                <div class="col-md-8">
-                    <h3 class="neutral-1000 wow fadeInUp">Xe máy</h3>
-                    <p class="text-xl-medium neutral-500 wow fadeInUp">Hàng nghìn chiếc xe phù hợp với nhu cầu của bạn</p>
+            <div class="row align-items-end">
+                <div class="col-md-9 wow fadeInUp">
+                    <h3 class="title-svg neutral-1000 mb-5">Xe máy</h3>
+                    <p class="text-lg-medium text-bold neutral-500">Hàng nghìn chiếc xe phù hợp với nhu cầu của bạn
+                    </p>
                 </div>
-                <div class="col-md-4">
-                    <div class="d-flex justify-content-md-end mt-md-0 mt-4">
-                        <a class="btn btn-primary wow fadeInUp" href="#">
-                            Xem thêm
-                            <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 15L15 8L8 1M15 8L1 8" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <div class="col-md-3 position-relative mb-30 wow fadeInUp">
+                    <div class="box-button-slider box-button-slider-team justify-content-end">
+                        <div class="swiper-button-prev swiper-button-prev-style-1 swiper-button-prev-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                                <path d="M7.99992 3.33325L3.33325 7.99992M3.33325 7.99992L7.99992 12.6666M3.33325 7.99992H12.6666" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>
-                        </a>
+                        </div>
+                        <div class="swiper-button-next swiper-button-next-style-1 swiper-button-next-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                                <path d="M7.99992 12.6666L12.6666 7.99992L7.99992 3.33325M12.6666 7.99992L3.33325 7.99992" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="box-list-populars">
-                <div class="row equal-height-cards">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb5.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Wave Anpha 2024</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 xe</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
+            <div class="block-flights wow fadeInUp">
+                <div class="box-swiper mt-30">
+                    <div class="swiper-container swiper-group-4 swiper-group-journey">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards " data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb5.jpg" alt="Carento" />
                                         </a>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb6.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">AirBlade 2023</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">48 xe</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Wave Anpha 2024</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 xe</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb6.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">AirBlade 2023</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">48 xe</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb5.jpg" alt="Carento" />
-                                </a>
                             </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Wave Anpha 2024</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 xe</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
+                            <div class="swiper-slide">
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb6.jpg" alt="Carento" />
                                         </a>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb6.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">AirBlade 2023</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">48 xe</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">AirBlade 2023</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">48 xe</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb5.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Wave Anpha 2024</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 xe</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb5.jpg" alt="Carento" />
                                         </a>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb6.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">AirBlade 2023</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">48 xe</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Wave Anpha 2024</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 xe</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb5.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Wave Anpha 2024</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 xe</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
+                            <div class="swiper-slide">
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb5.jpg" alt="Carento" />
                                         </a>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb6.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">AirBlade 2023</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">48 xe</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Wave Anpha 2024</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 xe</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb6.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">AirBlade 2023</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">48 xe</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb6.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">AirBlade 2023</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">48 xe</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb5.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Wave Anpha 2024</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 xe</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a class="btn btn-primary wow fadeInUp" href="#">
+                    Xem thêm
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 15L15 8L8 1M15 8L1 8" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
 
 
-
-    <section class="section-box background-body pt-60">
+    <section class="section-box box-flights background-body">
         <div class="container">
-            <div class="row align-items-end mb-40">
-                <div class="col-md-8">
-                    <h3 class="neutral-1000 wow fadeInUp">Ô tô</h3>
-                    <p class="text-xl-medium neutral-500 wow fadeInUp">Hàng nghìn chiếc xe phù hợp với nhu cầu của bạn</p>
+            <div class="row align-items-end">
+                <div class="col-md-9 wow fadeInUp">
+                    <h3 class="title-svg neutral-1000 mb-5">Ô tô</h3>
+                    <p class="text-lg-medium text-bold neutral-500">Hàng nghìn chiếc xe phù hợp với nhu cầu của bạn
+                    </p>
                 </div>
-                <div class="col-md-4">
-                    <div class="d-flex justify-content-md-end mt-md-0 mt-4">
-                        <a class="btn btn-primary wow fadeInUp" href="#">
-                            Xem thêm
-                            <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 15L15 8L8 1M15 8L1 8" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <div class="col-md-3 position-relative mb-30 wow fadeInUp">
+                    <div class="box-button-slider box-button-slider-team justify-content-end">
+                        <div class="swiper-button-prev swiper-button-prev-style-1 swiper-button-prev-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                                <path d="M7.99992 3.33325L3.33325 7.99992M3.33325 7.99992L7.99992 12.6666M3.33325 7.99992H12.6666" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>
-                        </a>
+                        </div>
+                        <div class="swiper-button-next swiper-button-next-style-1 swiper-button-next-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                                <path d="M7.99992 12.6666L12.6666 7.99992L7.99992 3.33325M12.6666 7.99992L3.33325 7.99992" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="box-list-populars">
-                <div class="row equal-height-cards">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb7.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Kia New Seltos</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Xe</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
+            <div class="block-flights wow fadeInUp">
+                <div class="box-swiper mt-30">
+                    <div class="swiper-container swiper-group-4 swiper-group-journey">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb7.jpg" alt="Carento" />
                                         </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Kia New Seltos</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Xe</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb8.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Toyota Yaris 2021</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Xe</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb8.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Toyota Yaris 2021</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Xe</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb7.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Kia New Seltos</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Xe</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb7.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Kia New Seltos</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Xe</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb8.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Toyota Yaris 2021</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Xe</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb8.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Toyota Yaris 2021</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Xe</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb7.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Kia New Seltos</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Xe</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb8.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Toyota Yaris 2021</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Xe</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb7.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Kia New Seltos</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Xe</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb8.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Toyota Yaris 2021</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Xe</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb7.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Kia New Seltos</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Xe</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb8.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Toyota Yaris 2021</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Xe</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb7.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Kia New Seltos</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Xe</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb8.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Toyota Yaris 2021</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Xe</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a class="btn btn-primary wow fadeInUp" href="#">
+                    Xem thêm
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 15L15 8L8 1M15 8L1 8" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-box box-flights background-body">
+        <div class="container">
+            <div class="row align-items-end">
+                <div class="col-md-9 wow fadeInUp">
+                    <h3 class="title-svg neutral-1000 mb-5">Laptop</h3>
+                    <p class="text-lg-medium text-bold neutral-500">Hàng nghìn chiếc laptop phù hợp với nhu cầu của bạn
+                    </p>
+                </div>
+                <div class="col-md-3 position-relative mb-30 wow fadeInUp">
+                    <div class="box-button-slider box-button-slider-team justify-content-end">
+                        <div class="swiper-button-prev swiper-button-prev-style-1 swiper-button-prev-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                                <path d="M7.99992 3.33325L3.33325 7.99992M3.33325 7.99992L7.99992 12.6666M3.33325 7.99992H12.6666" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                        <div class="swiper-button-next swiper-button-next-style-1 swiper-button-next-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                                <path d="M7.99992 12.6666L12.6666 7.99992L7.99992 3.33325M12.6666 7.99992L3.33325 7.99992" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block-flights wow fadeInUp">
+                <div class="box-swiper mt-30">
+                    <div class="swiper-container swiper-group-4 swiper-group-journey">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb1.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">MacBook Air 2020 13 inch</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Laptop</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb2.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Dell XPS 9320</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Laptop</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb2.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Dell XPS 9320</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Laptop</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb1.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">MacBook Air 2020 13 inch</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Laptop</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb1.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">MacBook Air 2020 13 inch</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Laptop</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb2.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Dell XPS 9320</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Laptop</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb2.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Dell XPS 9320</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Laptop</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb1.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">MacBook Air 2020 13 inch</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Laptop</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a class="btn btn-primary wow fadeInUp" href="#">
+                    Xem thêm
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 15L15 8L8 1M15 8L1 8" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-box box-flights background-body">
+        <div class="container">
+            <div class="row align-items-end">
+                <div class="col-md-9 wow fadeInUp">
+                    <h3 class="title-svg neutral-1000 mb-5">Máy in</h3>
+                    <p class="text-lg-medium text-bold neutral-500">Hàng nghìn chiếc laptop phù hợp với nhu cầu của bạn
+                    </p>
+                </div>
+                <div class="col-md-3 position-relative mb-30 wow fadeInUp">
+                    <div class="box-button-slider box-button-slider-team justify-content-end">
+                        <div class="swiper-button-prev swiper-button-prev-style-1 swiper-button-prev-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                                <path d="M7.99992 3.33325L3.33325 7.99992M3.33325 7.99992L7.99992 12.6666M3.33325 7.99992H12.6666" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                        <div class="swiper-button-next swiper-button-next-style-1 swiper-button-next-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                                <path d="M7.99992 12.6666L12.6666 7.99992L7.99992 3.33325M12.6666 7.99992L3.33325 7.99992" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block-flights wow fadeInUp">
+                <div class="box-swiper mt-30">
+                    <div class="swiper-container swiper-group-4 swiper-group-journey">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb3.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Máy in canon lbp 6030</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Máy</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb4.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Máy in laser Brother HL-B2000d</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Máy</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb4.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Máy in laser Brother HL-B2000d</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Máy</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb3.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Máy in canon lbp 6030</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Máy</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb3.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Máy in canon lbp 6030</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Máy</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb4.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Máy in laser Brother HL-B2000d</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Máy</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb4.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Máy in laser Brother HL-B2000d</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Máy</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/nb3.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Máy in canon lbp 6030</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Máy</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a class="btn btn-primary wow fadeInUp" href="#">
+                    Xem thêm
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 15L15 8L8 1M15 8L1 8" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
 
 
-    <section class="section-box background-body pt-60">
+    <section class="section-box box-flights background-body">
         <div class="container">
-            <div class="row align-items-end mb-40">
-                <div class="col-md-8">
-                    <h3 class="neutral-1000 wow fadeInUp">Laptop</h3>
-                    <p class="text-xl-medium neutral-500 wow fadeInUp">Hàng nghìn chiếc laptop phù hợp với nhu cầu của bạn</p>
+            <div class="row align-items-end">
+                <div class="col-md-9 wow fadeInUp">
+                    <h3 class="title-svg neutral-1000 mb-5">Thiết bị khác</h3>
+                    <p class="text-lg-medium text-bold neutral-500">Hàng nghìn thiết bị khác phù hợp với nhu cầu của bạn
+                    </p>
                 </div>
-                <div class="col-md-4">
-                    <div class="d-flex justify-content-md-end mt-md-0 mt-4">
-                        <a class="btn btn-primary wow fadeInUp" href="#">
-                            Xem thêm
-                            <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 15L15 8L8 1M15 8L1 8" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <div class="col-md-3 position-relative mb-30 wow fadeInUp">
+                    <div class="box-button-slider box-button-slider-team justify-content-end">
+                        <div class="swiper-button-prev swiper-button-prev-style-1 swiper-button-prev-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                                <path d="M7.99992 3.33325L3.33325 7.99992M3.33325 7.99992L7.99992 12.6666M3.33325 7.99992H12.6666" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>
-                        </a>
+                        </div>
+                        <div class="swiper-button-next swiper-button-next-style-1 swiper-button-next-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16" fill="none">
+                                <path d="M7.99992 12.6666L12.6666 7.99992L7.99992 3.33325M12.6666 7.99992L3.33325 7.99992" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="box-list-populars">
-                <div class="row equal-height-cards">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb1.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">MacBook Air 2020 13 inch</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Laptop</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
+            <div class="block-flights wow fadeInUp">
+                <div class="box-swiper mt-30">
+                    <div class="swiper-container swiper-group-4 swiper-group-journey">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/i1.jpg" alt="Carento" />
                                         </a>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb2.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Dell XPS 9320</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Laptop</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Sony PlayStation 5</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Máy</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
 
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/i2.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Loa kéo di động điện MKW16</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Máy</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/i2.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Loa kéo di động điện MKW16</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Máy</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb1.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">MacBook Air 2020 13 inch</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Laptop</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/i1.jpg" alt="Carento" />
                                         </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Sony PlayStation 5</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Máy</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/i1.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Sony PlayStation 5</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Máy</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/i2.jpg" alt="Carento" />
+                                        </a>
+                                    </div>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Loa kéo di động điện MKW16</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Máy</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb2.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Dell XPS 9320</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Laptop</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
+                            <div class="swiper-slide">
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/i2.jpg" alt="Carento" />
                                         </a>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb1.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">MacBook Air 2020 13 inch</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Laptop</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Loa kéo di động điện MKW16</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Máy</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb2.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Dell XPS 9320</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Laptop</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
+
+                                <div class="card-popular background-card hover-up wow fadeIn equal-height-cards" data-wow-delay="0.1s">
+                                    <div class="card-image">
+                                        <a class="card-title" href="#">
+                                            <img src="/site/imgs/noibat/i1.jpg" alt="Carento" />
                                         </a>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb1.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">MacBook Air 2020 13 inch</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Laptop</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb2.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Dell XPS 9320</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Laptop</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
+                                    <div class="card-info">
+                                        <a class="card-title" href="#">Sony PlayStation 5</a>
+                                        <div class="card-meta">
+                                            <div class="meta-links"><a href="#">24 Máy</a></div>
+                                            <div class="card-button">
+                                                <a href="#">
+                                                    <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a class="btn btn-primary wow fadeInUp" href="#">
+                    Xem thêm
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 15L15 8L8 1M15 8L1 8" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
-
-    <section class="section-box background-body pt-60 ">
-        <div class="container">
-            <div class="row align-items-end mb-40">
-                <div class="col-md-8">
-                    <h3 class="neutral-1000 wow fadeInUp">Máy in</h3>
-                    <p class="text-xl-medium neutral-500 wow fadeInUp">Hàng nghìn chiếc máy in phù hợp với nhu cầu của bạn</p>
-                </div>
-                <div class="col-md-4">
-                    <div class="d-flex justify-content-md-end mt-md-0 mt-4">
-                        <a class="btn btn-primary wow fadeInUp" href="#">
-                            Xem thêm
-                            <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 15L15 8L8 1M15 8L1 8" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="box-list-populars">
-                <div class="row equal-height-cards">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb3.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Máy in canon lbp 6030</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Máy</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb4.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Máy in laser Brother HL-B2000d</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Máy</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb3.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Máy in canon lbp 6030</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Máy</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb4.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Máy in laser Brother HL-B2000d</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Máy</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb3.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Máy in canon lbp 6030</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Máy</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb4.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Máy in laser Brother HL-B2000d</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Máy</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb3.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Máy in canon lbp 6030</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Máy</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/nb4.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Máy in laser Brother HL-B2000d</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Máy</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="section-box background-body py-60">
-        <div class="container">
-            <div class="row align-items-end mb-40">
-                <div class="col-md-8">
-                    <h3 class="neutral-1000 wow fadeInUp">Thiết bị khác</h3>
-                    <p class="text-xl-medium neutral-500 wow fadeInUp">Hàng nghìn thiết bị khác phù hợp với nhu cầu của bạn</p>
-                </div>
-                <div class="col-md-4">
-                    <div class="d-flex justify-content-md-end mt-md-0 mt-4">
-                        <a class="btn btn-primary wow fadeInUp" href="#">
-                            Xem thêm
-                            <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8 15L15 8L8 1M15 8L1 8" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="box-list-populars">
-                <div class="row equal-height-cards">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/i1.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Sony PlayStation 5</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Máy</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/i2.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Loa kéo di động điện MKW16</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Máy</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/i1.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Sony PlayStation 5</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Máy</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/i2.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Loa kéo di động điện MKW16</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Máy</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/i1.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Sony PlayStation 5</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Máy</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/i2.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Loa kéo di động điện MKW16</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Máy</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/i1.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Sony PlayStation 5</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Máy</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="card-popular background-card hover-up wow fadeIn" data-wow-delay="0.1s">
-                            <div class="card-image">
-                                <a class="card-title" href="#">
-                                    <img src="/site/imgs/noibat/i2.jpg" alt="Carento" />
-                                </a>
-                            </div>
-                            <div class="card-info">
-                                <a class="card-title" href="#">Loa kéo di động điện MKW16</a>
-                                <div class="card-meta">
-                                    <div class="meta-links"><a href="#">24 Máy</a></div>
-                                    <div class="card-button">
-                                        <a href="#">
-                                            <svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011" stroke="" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
 
 
 
     <!-- why-us-1 -->
-    <section class="section-box box-why-book-22 background-body @@classList">
+    <section class="section-box box-why-book-22 background-body @@classList" style="padding-top: 70px !important; padding-bottom: 60px !important;">
         <div class="container">
             <div class="text-center wow fadeInUp">
                 <p class="text-xl-medium neutral-500 wow fadeInUp">QUY TRÌNH THUÊ SẢN PHẨM</p>
@@ -1780,7 +1870,7 @@
 
 
 
-    <section class="section-box background-body pb-85">
+    <section class="section-box background-body pb-85" style="padding-bottom: 0 !important;">
         <div class="container">
             <div class="row align-items-end">
                 <div class="col-md-9 mb-30 wow fadeInUp">
@@ -1993,7 +2083,7 @@
     </section>
 
     <!-- testimonials -->
-    <section class="section-box py-96 background-body">
+    <section class="section-box py-96 background-body" style="padding-top: 50px !important;">
         <div class="container">
             <div class="row align-items-end">
                 <div class="col-md-9 col-sm-9 wow fadeInUp">
@@ -2263,7 +2353,7 @@
 
 
     <!-- blog-1 -->
-    <section class="section-box box-news background-body">
+    <section class="section-box box-news background-body" style="padding-top: 60px !important;">
         <div class="container">
             <div class="row align-items-end">
                 <div class="col-md-9 mb-30 wow fadeInUp">

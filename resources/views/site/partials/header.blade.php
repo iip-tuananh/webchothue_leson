@@ -115,7 +115,8 @@
 <div class="mobile-header-active mobile-header-wrapper-style perfect-scrollbar button-bg-2">
     <div class="mobile-header-wrapper-inner">
         <div class="mobile-header-logo">
-            <a class="d-flex" href="#"><img class="light-mode" alt="Carento" src="/site/imgs/template/logo-d.svg" /><img class="dark-mode" alt="Carento" src="{{ $config->image->path ?? '' }}" /></a>
+            <a class="d-flex" href="#"><img class="light-mode" alt="Carento" src="{{ $config->image->path ?? '' }}" />
+                <img class="dark-mode" alt="Carento" src="{{ $config->image->path ?? '' }}" /></a>
             <div class="burger-icon burger-icon-white"></div>
         </div>
 
@@ -161,7 +162,7 @@
         <div class="sidebar-canvas-head">
             <div class="sidebar-canvas-logo">
                 <a class="d-flex" href="#">
-                    <img class="light-mode" alt="Carento" src="/site/imgs/template/logo-d.svg" />
+                    <img class="light-mode" alt="Carento" src="{{ $config->image->path ?? '' }}" />
                     <img class="dark-mode" alt="Carento" src="{{ $config->image->path ?? '' }}" />
                 </a>
             </div>

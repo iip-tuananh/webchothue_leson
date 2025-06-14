@@ -44,7 +44,7 @@
     <script src="/site/js/bootstrap-datepicker.js"></script>
     <script src="/site/js/dark.js"></script>
     <!-- Count down-->
-    <script src="/site/jsjquery.countdown.min.js"></script>
+    <script src="/site/js/jquery.countdown.min.js"></script>
     <script src="/site/js/noUISlider.js"></script>
     <script src="/site/js/slider.js"></script>
     <!--Custom script for this template-->

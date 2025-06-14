@@ -343,23 +343,50 @@
       autoplay: {
         delay: 10000,
       },
-      breakpoints: {
-        1199: {
-          slidesPerView: 4,
+      // breakpoints: {
+      //   1199: {
+      //     slidesPerView: 4,
+      //   },
+      //   800: {
+      //     slidesPerView: 3,
+      //   },
+      //   500: {
+      //     slidesPerView: 2,
+      //   },
+      //   350: {
+      //     slidesPerView: 1,
+      //   },
+      //   250: {
+      //     slidesPerView: 1,
+      //   },
+      // },
+
+
+        breakpoints: {
+            1199: {
+                slidesPerView: 4,
+                slidesPerGroup: 2,
+                freeMode: false,     // desktop vẫn nhảy nhóm bình thường
+            },
+            800: {
+                slidesPerView: 3,
+                slidesPerGroup: 2,
+                freeMode: false,
+            },
+            500: {
+                slidesPerView: 2,
+                slidesPerGroup: 1,
+                freeMode: false,
+            },
+            400: {
+                slidesPerView: 1.4,   // hiển thị 1.4 slide
+                slidesPerGroup: 1,
+            },
+            0: {
+                slidesPerView: 1.3,   // nhỏ hơn 400 thì 1.3 slide
+                slidesPerGroup: 1,
+            },
         },
-        800: {
-          slidesPerView: 3,
-        },
-        500: {
-          slidesPerView: 2,
-        },
-        350: {
-          slidesPerView: 1,
-        },
-        250: {
-          slidesPerView: 1,
-        },
-      },
       on: {
         afterInit: function () {
           // set padding left slide fleet

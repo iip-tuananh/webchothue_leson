@@ -3045,22 +3045,22 @@ label {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: -15px;
-  padding-top: 27px;
+  margin-top: -30px;
+  padding-top: 20px;
   border-top: 1px solid var(--bs-border-color);
-  margin-bottom: 15px;
+  /*margin-bottom: 15px;*/
 }
 .card-journey-small .card-info .card-program .card-facitlities .card-miles,
 .card-journey-small .card-info .card-program .card-facitlities .card-gear,
 .card-journey-small .card-info .card-program .card-facitlities .card-fuel,
 .card-journey-small .card-info .card-program .card-facitlities .card-seat {
   width: 50%;
-  padding: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 30px;
   margin-bottom: 13px;
   color: #000000;
 }
 .card-journey-small .card-info .card-program .card-facitlities .card-miles {
-  /*background: url(../imgs/template/icons/mile.svg) no-repeat left center;*/
+  background: url(../imgs/template/icons/mile.svg) no-repeat left center;
 }
 .card-journey-small .card-info .card-program .card-facitlities .card-gear {
   background: url(../imgs/template/icons/automatic.svg) no-repeat left center;
@@ -3767,7 +3767,7 @@ label {
 }
 .card-news .card-info .card-meta .post-date {
   display: inline-block;
-  padding: 0px 16px 0px 0px;
+  padding: 0px 16px 0px 20px;
   background: url(../imgs/template/icons/calendar.svg) no-repeat left center;
   font-size: 14px;
   line-height: 22px;
@@ -3776,7 +3776,7 @@ label {
 }
 .card-news .card-info .card-meta .post-time {
   display: inline-block;
-  padding: 0px 16px 0px 0px;
+  padding: 0px 16px 0px 20px;
   font-size: 14px;
   line-height: 22px;
   font-weight: 500;
@@ -3785,7 +3785,7 @@ label {
 }
 .card-news .card-info .card-meta .post-comment {
   display: inline-block;
-  padding: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 20px;
   font-size: 14px;
   line-height: 22px;
   font-weight: 500;
@@ -8333,8 +8333,8 @@ a.icon-socials:hover svg path {
 }
 
 .box-flights {
-  padding-top: 90px;
-  padding-bottom: 51px;
+  padding-top: 40px;
+  /*padding-bottom: 51px;*/
 }
 
 .swiper-group-journey {
