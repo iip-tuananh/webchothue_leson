@@ -238,6 +238,15 @@
             /* bạn có thể set margin-bottom: auto; với các phần trên để push phần cuối xuống dưới */
         }
 
+        .p-4 {
+            padding: 1.1rem !important;
+        }
+
+        @media (max-width: 767.98px) {
+            .p-4 {
+                padding: 0.7rem !important;
+            }
+        }
     </style>
 
     <section class="section-box box-flights background-body" style="padding-bottom: 51px !important;">
@@ -1757,7 +1766,7 @@
 
 
     <!-- why-us-1 -->
-    <section class="section-box box-why-book-22 background-body @@classList" style="padding-top: 70px !important; padding-bottom: 0px !important;">
+    <section class="section-box box-why-book-22 background-body @@classList" style="padding-top: 60px !important; padding-bottom: 0px !important;">
         <div class="container">
             <div class="text-center wow fadeInUp">
                 <p class="text-xl-medium neutral-500 wow fadeInUp">QUY TRÌNH THUÊ SẢN PHẨM</p>
@@ -2085,8 +2094,8 @@
     </section>
 
 
-    <section class="background-body py-60">
-        <div class="box-cta-3 background-100 py-96 mx-auto rounded-3 position-relative overflow-hidden">
+    <section class="background-body py-60" style="padding-top: 0px !important; padding-bottom: 10px !important;">
+        <div class="box-cta-3 background-100 py-96 mx-auto rounded-3 position-relative overflow-hidden" style="padding-top: 50px !important;">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-5 pe-lg-5">
@@ -2136,7 +2145,7 @@
     </section>
 
     <!-- testimonials -->
-    <section class="section-box py-96 background-body" style="padding-top: 50px !important;">
+    <section class="section-box py-96 background-body" style="padding-top: 50px !important; padding-bottom: 26px !important;">
         <div class="container">
             <div class="row align-items-end">
                 <div class="col-md-9 col-sm-9 wow fadeInUp">
@@ -2406,7 +2415,7 @@
 
 
     <!-- blog-1 -->
-    <section class="section-box box-news background-body" style="padding-top: 60px !important;">
+    <section class="section-box box-news background-body" style="padding-top: 60px !important; padding-bottom: 60px !important;">
         <div class="container">
             <div class="row align-items-end">
                 <div class="col-md-9 mb-30 wow fadeInUp">
