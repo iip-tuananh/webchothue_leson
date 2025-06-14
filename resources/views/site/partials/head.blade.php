@@ -41,4 +41,4 @@
 <link rel="image_src" href="{{@$config->image->path ?? ''}}" />
 <link rel="image_src" href="{{@$config->image->path ?? ''}}" />
 
-<link href="/site/css/maine209.css?v=1.0.0" rel="stylesheet" />
+<link href="/site/css/maine209.css?v=1.1.0" rel="stylesheet" />

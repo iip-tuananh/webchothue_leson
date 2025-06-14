@@ -635,27 +635,27 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex justify-content-center">
-                <a class="btn btn-brand-2 text-nowrap wow fadeInUp" href="cars-list-1.html">
-                    <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
-                        <g clip-path="url(#clip0_117_4717)">
-                            <path d="M4.4024 14.0977C1.60418 11.2899 1.60418 6.71576 4.4024 3.90794L5.89511 5.40064V0.90332H1.39779L3.13528 2.64081C-0.378102 6.1494 -0.378102 11.8562 3.13528 15.3696C5.35275 17.5823 8.43896 18.403 11.2996 17.8175V15.9648C8.91413 16.584 6.26949 15.9648 4.4024 14.0977Z" fill="#101010" />
-                            <path d="M15.864 2.64036C13.6465 0.418093 10.5603 -0.402657 7.69971 0.182907V2.03559C10.0852 1.41643 12.7346 2.04519 14.5969 3.90748C17.4047 6.71531 17.4047 11.2894 14.5969 14.0973L13.1042 12.6045V17.1067H17.6063L15.8688 15.3692C19.3774 11.8558 19.3774 6.14894 15.864 2.64036Z" fill="#101010" />
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_117_4717">
-                                <rect width="18" height="18" fill="white" transform="translate(0.5)" />
-                            </clipPath>
-                        </defs>
-                    </svg>
-                    Xem thêm sản phẩm
-                </a>
-            </div>
+{{--            <div class="d-flex justify-content-center">--}}
+{{--                <a class="btn btn-brand-2 text-nowrap wow fadeInUp" href="cars-list-1.html">--}}
+{{--                    <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">--}}
+{{--                        <g clip-path="url(#clip0_117_4717)">--}}
+{{--                            <path d="M4.4024 14.0977C1.60418 11.2899 1.60418 6.71576 4.4024 3.90794L5.89511 5.40064V0.90332H1.39779L3.13528 2.64081C-0.378102 6.1494 -0.378102 11.8562 3.13528 15.3696C5.35275 17.5823 8.43896 18.403 11.2996 17.8175V15.9648C8.91413 16.584 6.26949 15.9648 4.4024 14.0977Z" fill="#101010" />--}}
+{{--                            <path d="M15.864 2.64036C13.6465 0.418093 10.5603 -0.402657 7.69971 0.182907V2.03559C10.0852 1.41643 12.7346 2.04519 14.5969 3.90748C17.4047 6.71531 17.4047 11.2894 14.5969 14.0973L13.1042 12.6045V17.1067H17.6063L15.8688 15.3692C19.3774 11.8558 19.3774 6.14894 15.864 2.64036Z" fill="#101010" />--}}
+{{--                        </g>--}}
+{{--                        <defs>--}}
+{{--                            <clipPath id="clip0_117_4717">--}}
+{{--                                <rect width="18" height="18" fill="white" transform="translate(0.5)" />--}}
+{{--                            </clipPath>--}}
+{{--                        </defs>--}}
+{{--                    </svg>--}}
+{{--                    Xem thêm sản phẩm--}}
+{{--                </a>--}}
+{{--            </div>--}}
         </div>
     </section>
 
 
-    <section class="box-cta-1 background-100 py-96" style="padding-bottom: 30px !important;">
+    <section class="box-cta-1 background-100 py-96" style="padding-bottom: 30px !important; padding-top: 60px">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 pe-lg-5 wow fadeInUp">
@@ -1757,7 +1757,7 @@
 
 
     <!-- why-us-1 -->
-    <section class="section-box box-why-book-22 background-body @@classList" style="padding-top: 70px !important; padding-bottom: 60px !important;">
+    <section class="section-box box-why-book-22 background-body @@classList" style="padding-top: 70px !important; padding-bottom: 0px !important;">
         <div class="container">
             <div class="text-center wow fadeInUp">
                 <p class="text-xl-medium neutral-500 wow fadeInUp">QUY TRÌNH THUÊ SẢN PHẨM</p>
@@ -1767,10 +1767,56 @@
                 </h3>
             </div>
 
+            <style>
+                .why-steps {
+                    display: flex;
+                    flex-wrap: wrap;               /* cho xuống dòng khi screen nhỏ */
+                    justify-content: space-between;/* khoảng cách đều giữa các item */
+                    /*gap: 2rem;                     !* khoảng trống ngang + dọc *!*/
+                }
+
+                /* Mỗi “step” có flex-basis cố định hoặc tự co giãn */
+                .why-steps .step {
+                    flex: 1 1 18%;                 /* mỗi item chiếm ~18% container, co giãn nếu cần */
+                    max-width: 18%;                /* không rộng quá 18% */
+                    display: flex;
+                    justify-content: center;       /* căn giữa ngang nội dung */
+                    margin-bottom: 2rem;           /* khoảng cách khi wrap xuống dòng */
+                }
+
+                /* Bên trong card-why, căn dọc và căn giữa text */
+                .why-steps .card-why {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+
+                /* Đảm bảo icon không kéo căng */
+                .why-steps .card-image {
+                    margin-bottom: 1rem;
+                }
+
+                /* Title + description */
+                .why-steps .card-info h6 {
+                    margin-bottom: 0.5rem;
+                }
+
+                @media (max-width: 767.98px) {
+                    .why-steps {
+                        justify-content: center; /* hoặc flex-start tuỳ bạn */
+                    }
+                    .why-steps .step {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                    }
+                }
+
+            </style>
 
 {{--            (Tìm kiếm sản phẩm - lựa chọn báo giá - Gửi thông tin yêu cầu - Ký kết hợp đồng - Nhận hàng và sử dụng )--}}
-            <div class="row mt-40">
-                <div class="col-lg-2 col-sm-6">
+            <div class="why-steps mt-40">
+                <div class="step">
                     <div class="card-why wow fadeIn" data-wow-delay="0.1s">
                         <div class="card-image">
                             <svg xmlns="http://www.w3.org/2000/svg" width="62" height="62" viewBox="0 0 62 62" fill="none">
@@ -1787,7 +1833,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-sm-6">
+                <div class="step">
                     <div class="card-why wow fadeIn" data-wow-delay="0.2s">
                         <div class="card-image">
                             <svg xmlns="http://www.w3.org/2000/svg" width="62" height="62" viewBox="0 0 62 62" fill="none">
@@ -1805,7 +1851,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
+
+                <div class="step">
                     <div class="card-why wow fadeIn" data-wow-delay="0.3s">
                         <div class="card-image">
                             <svg xmlns="http://www.w3.org/2000/svg" width="62" height="62" viewBox="0 0 62 62" fill="none">
@@ -1829,7 +1876,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-sm-6">
+
+                <div class="step">
                     <div class="card-why wow fadeIn" data-wow-delay="0.4s">
                         <div class="card-image">
                             <svg xmlns="http://www.w3.org/2000/svg" width="62" height="62" fill="none"
@@ -1846,7 +1894,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
+
+                <div class="step">
                     <div class="card-why wow fadeIn" data-wow-delay="0.4s">
                         <div class="card-image">
                             <svg xmlns="http://www.w3.org/2000/svg" width="62" height="62" viewBox="0 0 62 62" fill="none">
@@ -1864,7 +1913,11 @@
                         </div>
                     </div>
                 </div>
+                <!-- bước 3, 4, 5 tương tự -->
             </div>
+
+
+
         </div>
     </section>
 
