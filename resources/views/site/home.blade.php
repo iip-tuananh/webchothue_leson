@@ -2324,80 +2324,80 @@
                 </div>
             </div>
 
-            <div class="row align-items-center">
-                <div class="border-top py-3 mt-3"></div>
-                <div class="col-lg-7 mb-20 wow fadeIn">
-                    <div class="row">
-                        <!-- Chi nhánh toàn cầu -->
-                        <div class="col-md-3 col-6 mb-md-0 mb-4 d-flex flex-column align-items-center align-items-md-start">
-                            <div class="d-flex justify-content-center justify-content-md-start">
-                                <h3 class="count text-white"><span class="odometer" data-count="45"></span></h3>
-                                <h3 class="text-white">+</h3>
-                            </div>
-                            <div class="position-relative">
-                                <p class="text-lg-bold text-white">Chi nhánh</p>
-                                <p class="text-lg-bold text-white">phủ rộng các tỉnh thành</p>
-                            </div>
-                        </div>
+{{--            <div class="row align-items-center">--}}
+{{--                <div class="border-top py-3 mt-3"></div>--}}
+{{--                <div class="col-lg-7 mb-20 wow fadeIn">--}}
+{{--                    <div class="row">--}}
+{{--                        <!-- Chi nhánh toàn cầu -->--}}
+{{--                        <div class="col-md-3 col-6 mb-md-0 mb-4 d-flex flex-column align-items-center align-items-md-start">--}}
+{{--                            <div class="d-flex justify-content-center justify-content-md-start">--}}
+{{--                                <h3 class="count text-white"><span class="odometer" data-count="45"></span></h3>--}}
+{{--                                <h3 class="text-white">+</h3>--}}
+{{--                            </div>--}}
+{{--                            <div class="position-relative">--}}
+{{--                                <p class="text-lg-bold text-white">Chi nhánh</p>--}}
+{{--                                <p class="text-lg-bold text-white">phủ rộng các tỉnh thành</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <!-- Điểm đến hợp tác -->
-                        <div class="col-md-3 col-6 mb-md-0 mb-4 d-flex flex-column align-items-center align-items-md-start">
-                            <div class="d-flex justify-content-center justify-content-md-start">
-                                <h3 class="count text-white"><span class="odometer" data-count="29"></span></h3>
-                                <h3 class="text-white">K</h3>
-                            </div>
-                            <div class="position-relative">
-                                <p class="text-lg-bold text-white">Địa điểm</p>
-                                <p class="text-lg-bold text-white">hợp tác</p>
-                            </div>
-                        </div>
+{{--                        <!-- Điểm đến hợp tác -->--}}
+{{--                        <div class="col-md-3 col-6 mb-md-0 mb-4 d-flex flex-column align-items-center align-items-md-start">--}}
+{{--                            <div class="d-flex justify-content-center justify-content-md-start">--}}
+{{--                                <h3 class="count text-white"><span class="odometer" data-count="29"></span></h3>--}}
+{{--                                <h3 class="text-white">K</h3>--}}
+{{--                            </div>--}}
+{{--                            <div class="position-relative">--}}
+{{--                                <p class="text-lg-bold text-white">Địa điểm</p>--}}
+{{--                                <p class="text-lg-bold text-white">hợp tác</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <!-- Số năm kinh nghiệm -->
-                        <div class="col-md-3 col-6 mb-md-0 mb-4 d-flex flex-column align-items-center align-items-md-start">
-                            <div class="d-flex justify-content-center justify-content-md-start">
-                                <h3 class="count text-white"><span class="odometer" data-count="20"></span></h3>
-                                <h3 class="text-white">+</h3>
-                            </div>
-                            <div class="position-relative">
-                                <p class="text-lg-bold text-white">Năm</p>
-                                <p class="text-lg-bold text-white">kinh nghiệm</p>
-                            </div>
-                        </div>
+{{--                        <!-- Số năm kinh nghiệm -->--}}
+{{--                        <div class="col-md-3 col-6 mb-md-0 mb-4 d-flex flex-column align-items-center align-items-md-start">--}}
+{{--                            <div class="d-flex justify-content-center justify-content-md-start">--}}
+{{--                                <h3 class="count text-white"><span class="odometer" data-count="20"></span></h3>--}}
+{{--                                <h3 class="text-white">+</h3>--}}
+{{--                            </div>--}}
+{{--                            <div class="position-relative">--}}
+{{--                                <p class="text-lg-bold text-white">Năm</p>--}}
+{{--                                <p class="text-lg-bold text-white">kinh nghiệm</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <!-- Khách hàng hài lòng -->
-                        <div class="col-md-3 col-6 mb-md-0 mb-4 d-flex flex-column align-items-center align-items-md-start">
-                            <div class="d-flex justify-content-center justify-content-md-start">
-                                <h3 class="count text-white"><span class="odometer" data-count="168"></span></h3>
-                                <h3 class="text-white">K</h3>
-                            </div>
-                            <div class="position-relative">
-                                <p class="text-lg-bold text-white">Khách hàng</p>
-                                <p class="text-lg-bold text-white">hài lòng</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                        <!-- Khách hàng hài lòng -->--}}
+{{--                        <div class="col-md-3 col-6 mb-md-0 mb-4 d-flex flex-column align-items-center align-items-md-start">--}}
+{{--                            <div class="d-flex justify-content-center justify-content-md-start">--}}
+{{--                                <h3 class="count text-white"><span class="odometer" data-count="168"></span></h3>--}}
+{{--                                <h3 class="text-white">K</h3>--}}
+{{--                            </div>--}}
+{{--                            <div class="position-relative">--}}
+{{--                                <p class="text-lg-bold text-white">Khách hàng</p>--}}
+{{--                                <p class="text-lg-bold text-white">hài lòng</p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <!-- Người dùng gần đây -->
-                <div class="col-lg-4 offset-lg-1 wow fadeIn">
-                    <div class="box-authors-partner background-body wow fadeInUp p-4">
-                        <div class="authors-partner-left">
-                            <img src="/site/imgs/page/homepage5/author.png" alt="Carento" />
-                            <img src="/site/imgs/page/homepage5/author2.png" alt="Carento" />
-                            <img src="/site/imgs/page/homepage5/author3.png" alt="Carento" />
-                            <span class="item-author">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="0.5" y="7.448" width="17" height="2.31818" fill="black"></rect>
-                        <rect x="7.84082" y="17.1072" width="17" height="2.31818" transform="rotate(-90 7.84082 17.1072)" fill="black"></rect>
-                    </svg>
-                </span>
-                        </div>
-                        <div class="authors-partner-right">
-                            <p class="text-sm neutral-1000">1684 người đã sử dụng dịch vụ trong <strong>24 giờ qua</strong></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+{{--                <!-- Người dùng gần đây -->--}}
+{{--                <div class="col-lg-4 offset-lg-1 wow fadeIn">--}}
+{{--                    <div class="box-authors-partner background-body wow fadeInUp p-4">--}}
+{{--                        <div class="authors-partner-left">--}}
+{{--                            <img src="/site/imgs/page/homepage5/author.png" alt="Carento" />--}}
+{{--                            <img src="/site/imgs/page/homepage5/author2.png" alt="Carento" />--}}
+{{--                            <img src="/site/imgs/page/homepage5/author3.png" alt="Carento" />--}}
+{{--                            <span class="item-author">--}}
+{{--                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">--}}
+{{--                        <rect x="0.5" y="7.448" width="17" height="2.31818" fill="black"></rect>--}}
+{{--                        <rect x="7.84082" y="17.1072" width="17" height="2.31818" transform="rotate(-90 7.84082 17.1072)" fill="black"></rect>--}}
+{{--                    </svg>--}}
+{{--                </span>--}}
+{{--                        </div>--}}
+{{--                        <div class="authors-partner-right">--}}
+{{--                            <p class="text-sm neutral-1000">1684 người đã sử dụng dịch vụ trong <strong>24 giờ qua</strong></p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
 
         </div>
