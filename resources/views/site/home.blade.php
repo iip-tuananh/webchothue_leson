@@ -19,7 +19,7 @@
     <section class="box-section block-banner-home1 position-relative">
         <div class="container position-relative z-1">
             <p class="text-primary text-md-bold wow fadeInUp">Tìm sản phẩm cần thuê dễ dàng</p>
-            <h1 class="color-white mb-35 wow fadeInUp">Bạn đang cần thuê thiết bị văn phòng? <br class="d-none d-lg-block" />Hơn 1000 sản phẩm đang chờ bạn.</h1>
+            <h1 class="color-white mb-35 wow fadeInUp">Bạn đang cần thuê thiết bị văn phòng, laptop? <br class="d-none d-lg-block" />Hơn 1000 sản phẩm đang chờ bạn.</h1>
             <ul class="list-ticks-green">
                 <li class="wow fadeInUp" data-wow-delay="0.1s">Chất lượng dịch vụ chu đáo</li>
                 <li class="wow fadeInUp" data-wow-delay="0.2s">Sản phẩm đa dạng</li>
